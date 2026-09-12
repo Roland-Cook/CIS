@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 
 class ClothingItem {
-    private String type;      // e.g., Shirt, Pants, Shoes
-    private String name;      // e.g., Blue Denim, Nike Air
-    private String size;      // e.g., Medium, 32x30, 10.5
-    private String color;     // e.g., Blue, Black
+    // Private Attributes 
+    private String type;      
+    private String name;      
+    private String size;      
+    private String color;    
 
     public ClothingItem(String type, String name, String size, String color) {
         this.type = type;
@@ -17,6 +18,7 @@ class ClothingItem {
         this.color = color;
     }
 
+    // get info about clothing item
     public String getType() { return type; }
     public String getName() { return name; }
     public String getSize() { return size; }
@@ -36,6 +38,8 @@ class ClothingItem {
 // Main Application 
 public class DigitalClosetApp {
     private static final String FILE_PATH = "closet_data.csv";
+    
+    // all items saved into this list of clothing items
     private static List<ClothingItem> items = new ArrayList<>();
 
     public static void main(String[] args) {
