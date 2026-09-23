@@ -52,7 +52,8 @@ public class DigitalClosetApp {
         while (running) {
             System.out.println("\n1. View Closet");
             System.out.println("2. Add Clothing Item");
-            System.out.println("3. Save & Exit");
+            System.out.println("3. Search by type of clothing");
+            System.out.println("4. Save & Exit");
             System.out.print("Choose an option: ");
 
             String choice = scanner.nextLine();
@@ -75,11 +76,28 @@ public class DigitalClosetApp {
                     saveData();
                     System.out.println("Item added and saved!");
                     break;
-                case "3":
+                case "4":
                     saveData();
                     System.out.println("Goodbye!");
                     running = false;
                     break;
+                case "3":
+    System.out.print("Enter clothing type to search for: ");
+    String searchType = scanner.nextLine();
+
+    boolean found = false;
+
+    for (ClothingItem item : items) {
+        if (item.getType().equalsIgnoreCase(searchType)) {
+            System.out.println(item);
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("No clothing items found with that type.");
+    }
+    break;
                 default:
                     System.out.println("Invalid choice. Try again.");
             }
