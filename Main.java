@@ -36,7 +36,7 @@ class ClothingItem {
 }
 
 // Main Application 
-public class DigitalClosetApp {
+public class Main {
     private static final String FILE_PATH = "closet_data.csv";
     
     // all items saved into this list of clothing items
